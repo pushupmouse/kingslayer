@@ -349,8 +349,10 @@ MonoBehaviour:
   _tankPrefab: {fileID: 4064672159332156478, guid: 5b9971590e800fe4a8e0bbe784822caf, type: 3}
   _roguePrefab: {fileID: 4064672159332156478, guid: 4e96b1bbb4bca9d41a93e7e8a225c479, type: 3}
   _slayerPrefab: {fileID: 4064672159332156478, guid: d09fd590f2c4af642ae544abfad408a3, type: 3}
+  _butcherPrefab: {fileID: 4064672159332156478, guid: eca5621aebd158f43bdc00553ef0f852, type: 3}
   _jokerPrefab: {fileID: 4064672159332156478, guid: 9243c4a2f54f0ea46ae66e875e7eea76, type: 3}
   _sniperPrefab: {fileID: 4064672159332156478, guid: 8679ee8212da3724c9b574228c02d3ad, type: 3}
+  _rangerPrefab: {fileID: 4064672159332156478, guid: 81682bb8b3e268b4a9212ac82c09979c, type: 3}
 --- !u!4 &328195896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 457395838790969797, guid: 6c19f680a8c38ec489bb0d3f5846deb5, type: 3}
@@ -1603,63 +1605,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &1665667254
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3599856783536583227, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_Name
-      value: prefab_attractor_pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7832989488685911412, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8745cd578fa4c474e88d9aa81b5dab23, type: 3}
 --- !u!1 &1757144977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,8 +1886,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 861218632}
-  - {fileID: 328195896}
   - {fileID: 1100718587}
+  - {fileID: 328195896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1797934353
@@ -2658,6 +2603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: prefab_weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 4536698887791695132, guid: efbfad46c89b7d8449b87a42f5b92147, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9115813662570366403, guid: efbfad46c89b7d8449b87a42f5b92147, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2718,4 +2667,3 @@ SceneRoots:
   - {fileID: 20052463}
   - {fileID: 1535515689}
   - {fileID: 537875317}
-  - {fileID: 1665667254}

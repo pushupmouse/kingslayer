@@ -12,8 +12,10 @@ public class EnemySpawner : Spawner
     [SerializeField] private Enemy _tankPrefab;
     [SerializeField] private Enemy _roguePrefab;
     [SerializeField] private Enemy _slayerPrefab;
+    [SerializeField] private Enemy _butcherPrefab;
     [SerializeField] private Enemy _jokerPrefab;
     [SerializeField] private Enemy _sniperPrefab;
+    [SerializeField] private Enemy _rangerPrefab;
 
     private Enemy[] _enemyPrefabs;
     
@@ -43,8 +45,10 @@ public class EnemySpawner : Spawner
             _tankPrefab,
             _roguePrefab,
             _slayerPrefab,
+            _butcherPrefab,
             _jokerPrefab,
             _sniperPrefab,
+            _rangerPrefab,
         };
     }
 
@@ -89,6 +93,8 @@ public enum EnemyType
     Tank = 2,
     Rogue = 3,
     Slayer = 4,
-    Joker = 5,
-    Sniper = 6,
+    Butcher = 5,
+    Joker = 6,
+    Sniper = 7,
+    Ranger = 8,
 }

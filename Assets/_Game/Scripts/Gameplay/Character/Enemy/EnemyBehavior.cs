@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using MEC;
 using Obvious.Soap;
 using UnityEngine;
@@ -17,11 +17,11 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private Slash _slashPrefab;
     [SerializeField] private FloatReference _spawnOffsetProjectile;
 
-    private StateType _stateType;
+    private StateType _stateType = StateType.Idle; // Start in Idle
     private float _attackTimer = 0;
-    private bool _hasInstantAttack = true;
-    private float _instantAttackTimer = 0;
-    private float _attack;
+    private bool _canAttack = true; // Attack is initially ready
+    private bool _isIdleCooldown = false; // Controls idle delay after attacking
+    
     private float _critRate;
     private float _critMult;
     private float _amp;
@@ -30,8 +30,8 @@ public class EnemyBehavior : MonoBehaviour
     private float _attackSpeed;
     private float _range;
     private float _attackMult;
+    private float _attack;
 
-    
     private class EnemyStat
     {
         [DataField(1)] public string Attack;
@@ -58,13 +58,10 @@ public class EnemyBehavior : MonoBehaviour
     private void Init()
     {
         int index = (int)_type;
-
         var growthList = _enemyGrowthData.AsList<EnemyGrowth>();
-
         _attackMult = float.Parse(growthList[index].Attack);
         
         var statList = _initEnemyStatsData.AsList<EnemyStat>();
-
         _attack = float.Parse(statList[index].Attack) * (1 + _attackMult * _currentRoundPhase);
         _critRate = float.Parse(statList[index].CritRate);
         _critMult = float.Parse(statList[index].CritMult);
@@ -73,70 +70,62 @@ public class EnemyBehavior : MonoBehaviour
         _attackSpeed = float.Parse(statList[index].AttackSpeed);
         _speed = float.Parse(statList[index].Speed);
         _range = float.Parse(statList[index].Range);
-        
-        SwitchState(StateType.Chase);
     }
     
     private void MyUpdate()
     {
+        // If attack is on cooldown, track the timer
+        if (!_canAttack)
+        {
+            _attackTimer += Time.deltaTime;
+
+            if (_attackTimer >= 1f / _attackSpeed)
+            {
+                _canAttack = true;
+                _attackTimer = 0f;
+            }
+        }
+
+        if (_isIdleCooldown) return; // Stop processing until idle delay is done
+
         float distanceToTarget = Vector3.Distance(_playerPosition.Value, transform.position);
 
-        if (distanceToTarget > _range && _stateType != StateType.Chase)
-        {
-            SwitchState(StateType.Chase);
-        }
-        else if (distanceToTarget <= _range && _stateType != StateType.Attack)
-        {
-            SwitchState(StateType.Attack);
-        }
-
+        // State logic
         switch (_stateType)
         {
+            case StateType.Idle:
+                if (distanceToTarget > _range) 
+                {
+                    SwitchState(StateType.Chase);
+                }
+                break;
+
             case StateType.Chase:
-                Chase();
+                if (distanceToTarget > _range)
+                {
+                    Chase();
+                }
+                else if (distanceToTarget <= _range && _canAttack)
+                {
+                    SwitchState(StateType.Attack);
+                }
                 break;
+
             case StateType.Attack:
-                PrepareAttack();
-                break;
-            default:
-                Debug.LogWarning("Something went wrong"); 
+                if (_canAttack)
+                {
+                    PerformAttack();
+                    _canAttack = false;
+                    Timing.RunCoroutine(IdleDelay().CancelWith(gameObject)); // Start idle cooldown
+                }
                 break;
         }
     }
 
     private void Chase()
     {
-        _instantAttackTimer += Time.deltaTime;
-
-        // This attack is ready twice as slow as the regular attack
-        if (!_hasInstantAttack && _instantAttackTimer >= 1f / (_attackSpeed * 2))
-        {
-            _hasInstantAttack = true;
-            _instantAttackTimer = 0f;
-        }
-
         Vector2 direction = (_playerPosition.Value - (Vector2)transform.position).normalized;
-
         transform.position += (Vector3)(direction * (_speed * Time.deltaTime));
-    }
-
-    
-    private void PrepareAttack()
-    {
-        if (_hasInstantAttack)
-        {
-            PerformAttack();
-            
-            _hasInstantAttack = false;
-        }
-        else
-        {
-            _attackTimer += Time.deltaTime;
-
-            if (_attackTimer < 1f / _attackSpeed) return;
-
-            PerformAttack();
-        }
     }
 
     private void PerformAttack()
@@ -145,38 +134,23 @@ public class EnemyBehavior : MonoBehaviour
 
         if (_attackType == AttackType.Slash)
         {
-            Vector2 spawnPosition = (Vector2)transform.position + directionNormalized * _range; //range is the offset
-
+            Vector2 spawnPosition = (Vector2)transform.position + directionNormalized * _range;
             var slash = Instantiate(_slashPrefab, spawnPosition, Quaternion.identity);
-
             slash.Init(GetDamage(), _penetration, directionNormalized);
         }
         else if (_attackType == AttackType.Projectile)
         {
             var spawnPoint = (Vector2)transform.position + directionNormalized * _spawnOffsetProjectile;
-
             var angle = Mathf.Atan2(directionNormalized.y, directionNormalized.x) * Mathf.Rad2Deg;
-
             var projectile = Instantiate(_projectilePrefab, spawnPoint, Quaternion.Euler(0, 0, angle));
-
             projectile.Init(GetDamage(), _penetration, directionNormalized);
         }
-
-        _attackTimer = 0f;
     }
-
 
     private float GetDamage()
     {
         var damage = _attack * (1 + _amp);
-        
-        bool isCriticalHit = Random.value < _critRate;
-
-        if (isCriticalHit)
-        {
-            damage *= _critMult;
-        }
-        
+        if (Random.value < _critRate) damage *= _critMult;
         return damage;
     }
     
@@ -184,9 +158,23 @@ public class EnemyBehavior : MonoBehaviour
     {
         _stateType = newState;
     }
+
+    private IEnumerator<float> IdleDelay()
+    {
+        _isIdleCooldown = true;
+        SwitchState(StateType.Idle);
+        yield return Timing.WaitForSeconds(1f / _attackSpeed); // Hardcoded 2-second idle
+        _isIdleCooldown = false;
+
+        // Determine next state
+        float distanceToTarget = Vector3.Distance(_playerPosition.Value, transform.position);
+        if (distanceToTarget > _range) SwitchState(StateType.Chase);
+        else if (distanceToTarget <= _range && _canAttack) SwitchState(StateType.Attack);
+    }
     
     private enum StateType
     {
+        Idle,
         Chase,
         Attack,
     }

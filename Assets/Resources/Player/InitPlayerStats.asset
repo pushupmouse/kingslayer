@@ -73,7 +73,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 1
+            value: 1.5
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -81,7 +81,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 0
+            value: 0.5
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 

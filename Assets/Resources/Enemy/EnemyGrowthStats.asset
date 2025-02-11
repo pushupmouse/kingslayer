@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     items:
-      keys: 00000000010000000200000003000000040000000500000006000000
+      keys: 000000000100000002000000030000000400000005000000060000000700000008000000
       values:
       - height: 25
         cells:
@@ -101,6 +101,26 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
+            value: 0.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.4
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 00000000010000000200000003000000
+          values:
+          - rawValue: 
+            value: Butcher
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
             value: 0.3
             UnityObject: {fileID: 0}
             UOs: []
@@ -138,6 +158,26 @@ MonoBehaviour:
           values:
           - rawValue: 
             value: Sniper
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.3
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 00000000010000000200000003000000
+          values:
+          - rawValue: 
+            value: Ranger
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 

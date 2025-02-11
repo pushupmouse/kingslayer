@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3597518768696099610}
   - component: {fileID: 3286829378304052771}
   m_Layer: 11
-  m_Name: prefab_projectile_enemy
+  m_Name: prefab_projectile_enemySniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,11 +83,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed:
     UseLocal: 1
-    LocalValue: 10
+    LocalValue: 15
     Variable: {fileID: 0}
   _lifeTime:
     UseLocal: 1
-    LocalValue: 2
+    LocalValue: 3
     Variable: {fileID: 0}
 --- !u!1 &4911810498022357810
 GameObject:

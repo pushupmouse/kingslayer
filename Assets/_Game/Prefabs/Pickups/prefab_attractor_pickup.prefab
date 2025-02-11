@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97b45ba9c210424baee7327e6502b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 20
-  _attractSpeed: 20
+  _radius: 100
+  _attractSpeed: 200
   _playerTransform: {fileID: 11400000, guid: 1bacc63e5a82e374bb2c9940397041d9, type: 2}
   _scriptableListExperiencePickup: {fileID: 11400000, guid: 8309935d0a32ed944bf639dba68f0b8f, type: 2}
 --- !u!1 &3813106972362988397
