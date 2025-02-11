@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c46ed672292249fa8d244dd2e7a8541, type: 3}
+  m_Name: EnemyGrowthStats
+  m_EditorClassIdentifier: 
+  data:
+    items:
+      keys: 00000000010000000200000003000000040000000500000006000000
+      values:
+      - height: 25
+        cells:
+          keys: 010000000200000003000000
+          values:
+          - rawValue: 
+            value: Attack
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Max Health
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Defense
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 00000000010000000200000003000000
+          values:
+          - rawValue: 
+            value: Normal
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.4
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 00000000010000000200000003000000
+          values:
+          - rawValue: 
+            value: Tank
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.5
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 00000000010000000200000003000000
+          values:
+          - rawValue: 
+            value: Rogue
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.3
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 00000000010000000200000003000000
+          values:
+          - rawValue: 
+            value: Slayer
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.4
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 00000000010000000200000003000000
+          values:
+          - rawValue: 
+            value: Joker
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.4
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 00000000010000000200000003000000
+          values:
+          - rawValue: 
+            value: Sniper
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.3
+            UnityObject: {fileID: 0}
+            UOs: []
+  columnHeaders:
+    items:
+      keys: 
+      values: []
+  VisualHeaders: 0

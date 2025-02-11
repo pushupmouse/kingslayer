@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c46ed672292249fa8d244dd2e7a8541, type: 3}
+  m_Name: ImportSheetsConfig
+  m_EditorClassIdentifier: 
+  data:
+    items:
+      keys: 000000000100000002000000030000000400000005000000060000000700000008000000
+      values:
+      - height: 25
+        cells:
+          keys: 000000000100000002000000
+          values:
+          - rawValue: 
+            value: https://docs.google.com/spreadsheets/d/1JrKqC_05uxrIXVH_h_uRoV42GXzX6Ae4BQWZ1XIL8A4/edit?gid=228128093#gid=228128093
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Assets/Resources/Player
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: InitPlayerStats
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 000000000100000002000000
+          values:
+          - rawValue: 
+            value: https://docs.google.com/spreadsheets/d/1JrKqC_05uxrIXVH_h_uRoV42GXzX6Ae4BQWZ1XIL8A4/edit?gid=379160049#gid=379160049
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Assets/Resources/Experience
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: ExperienceStats
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 020000000000000001000000
+          values:
+          - rawValue: 
+            value: StatIncreases
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: https://docs.google.com/spreadsheets/d/1JrKqC_05uxrIXVH_h_uRoV42GXzX6Ae4BQWZ1XIL8A4/edit?gid=90418071#gid=90418071
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Assets/Resources/StatIncreases
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 010000000200000000000000
+          values:
+          - rawValue: 
+            value: Assets/Resources/Enemy
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: InitEnemyStats
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: https://docs.google.com/spreadsheets/d/1JrKqC_05uxrIXVH_h_uRoV42GXzX6Ae4BQWZ1XIL8A4/edit?gid=704135891#gid=704135891
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 000000000100000002000000
+          values:
+          - rawValue: 
+            value: https://docs.google.com/spreadsheets/d/1JrKqC_05uxrIXVH_h_uRoV42GXzX6Ae4BQWZ1XIL8A4/edit?gid=248732314#gid=248732314
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Assets/Resources/Round
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: RoundPhaseStats
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 000000000100000002000000
+          values:
+          - rawValue: 
+            value: https://docs.google.com/spreadsheets/d/1JrKqC_05uxrIXVH_h_uRoV42GXzX6Ae4BQWZ1XIL8A4/edit?gid=754047635#gid=754047635
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Assets/Resources/Enemy
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: EnemySpawnStats
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 000000000100000002000000
+          values:
+          - rawValue: 
+            value: https://docs.google.com/spreadsheets/d/1JrKqC_05uxrIXVH_h_uRoV42GXzX6Ae4BQWZ1XIL8A4/edit?gid=1358531957#gid=1358531957
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Assets/Resources/Pickup
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: PickupSpawnStats
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 000000000100000002000000
+          values:
+          - rawValue: 
+            value: https://docs.google.com/spreadsheets/d/1JrKqC_05uxrIXVH_h_uRoV42GXzX6Ae4BQWZ1XIL8A4/edit?gid=1185319803#gid=1185319803
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Assets/Resources/StatIncreases
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: StatIncreaseChance
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 000000000100000002000000
+          values:
+          - rawValue: 
+            value: https://docs.google.com/spreadsheets/d/1JrKqC_05uxrIXVH_h_uRoV42GXzX6Ae4BQWZ1XIL8A4/edit?gid=1424349927#gid=1424349927
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Assets/Resources/Enemy
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: EnemyGrowthStats
+            UnityObject: {fileID: 0}
+            UOs: []
+  columnHeaders:
+    items:
+      keys: 
+      values: []
+  VisualHeaders: 0

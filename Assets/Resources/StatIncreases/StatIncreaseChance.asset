@@ -1,0 +1,1487 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c46ed672292249fa8d244dd2e7a8541, type: 3}
+  m_Name: StatIncreaseChance
+  m_EditorClassIdentifier: 
+  data:
+    items:
+      keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c000000
+      values:
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: Level
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Common
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Rare
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Epic
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: Legendary
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 100
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 95
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 90
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 10
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 85
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 15
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 80
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 20
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 75
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 25
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 7
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 70
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 30
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 65
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 35
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 9
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 60
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 40
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 10
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 45
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 11
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 53
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 46
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 12
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 51
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 47
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 13
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 49
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 48
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 14
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 47
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 49
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 15
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 45
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 50
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 16
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 43
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 51
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 17
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 41
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 52
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 7
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 18
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 39
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 53
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 19
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 37
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 54
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 9
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 20
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 35
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 10
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 21
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 33
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 12
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 22
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 31
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 14
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 23
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 29
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 16
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 24
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 27
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 18
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 25
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 25
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 20
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 26
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 23
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 22
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 27
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 21
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 24
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 28
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 19
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 26
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 29
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 17
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 28
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 30
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 15
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 30
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 31
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 14.3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 53.9
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 31
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.8
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 32
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 13.6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 52.8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 32
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 1.6
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 33
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 12.9
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 51.7
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 33
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 2.4
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 34
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 12.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 50.6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 34
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 3.2
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 35
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 11.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 49.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 35
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 4
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 36
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 10.8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 48.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 36
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 4.8
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 37
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 10.1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 47.3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 37
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 5.6
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 38
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 9.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 46.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 38
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 6.4
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 39
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 8.7
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 45.1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 39
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 7.2
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 40
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 44
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 40
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 8
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 41
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 7.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 42.6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 40.7
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 9.2
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 42
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 7
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 41.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 41.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 10.4
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 43
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 6.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 39.8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 42.1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 11.6
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 44
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 38.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 42.8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 12.8
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 45
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 5.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 37
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 43.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 14
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 46
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 35.6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 44.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 15.2
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 47
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 4.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 34.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 44.9
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 16.4
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 48
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 32.8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 45.6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 17.6
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 49
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 3.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 31.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 46.3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 18.8
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 50
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 30
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 47
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 20
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 51
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 2.7
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 28.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 47.3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 21.5
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 52
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 2.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 27
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 47.6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 23
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 53
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 2.1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 25.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 47.9
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 24.5
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 54
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 1.8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 24
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 48.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 26
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 55
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 1.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 22.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 48.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 27.5
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 56
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 1.2
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 21
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 48.8
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 29
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 57
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.9
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 19.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 49.1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 30.5
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 58
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.6
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 18
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 49.4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 32
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 59
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 16.5
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 49.7
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 33.5
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 0000000001000000020000000300000004000000
+          values:
+          - rawValue: 
+            value: 60
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 15
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 50
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 35
+            UnityObject: {fileID: 0}
+            UOs: []
+  columnHeaders:
+    items:
+      keys: 
+      values: []
+  VisualHeaders: 0
