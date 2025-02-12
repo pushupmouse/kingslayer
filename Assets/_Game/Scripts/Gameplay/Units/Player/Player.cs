@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, IDamageable
 {
-    [SerializeField] private ScriptableEventInt _onPlayerHealed;
     [SerializeField] private ScriptableEventInt _onPlayerDamaged;
     [SerializeField] private ScriptableEventNoParam _onPlayerDeath;
     [SerializeField] private FloatVariable _defCoefficient;
@@ -64,10 +63,6 @@ public class Player : MonoBehaviour, IDamageable
             {
                 _onPlayerDamaged.Raise(Math.Abs(Mathf.RoundToInt(diff)));
             }
-        }
-        else
-        {
-            _onPlayerHealed.Raise(Mathf.RoundToInt(diff));
         }
     }
 

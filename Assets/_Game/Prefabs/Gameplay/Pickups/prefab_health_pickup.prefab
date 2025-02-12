@@ -171,3 +171,4 @@ MonoBehaviour:
     UseLocal: 1
     LocalValue: 0.2
     Variable: {fileID: 0}
+  _onPlayerHealed: {fileID: 11400000, guid: 6578cf70365be894ca6a1fcd631f9db8, type: 2}
