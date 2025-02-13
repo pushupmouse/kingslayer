@@ -1,11 +1,12 @@
 using MEC;
 using Obvious.Soap;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private ScriptableListEnemy _scriptableListEnemy;
-    [SerializeField] private Projectile _projectilePrefab;
+    [SerializeField] private Attack _attackPrefab;
     [SerializeField] private FloatVariable _spawnOffset;
     [Header("Weapon Stats")]
     [SerializeField] private FloatVariable _playerAttack;
@@ -15,7 +16,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] private FloatVariable _playerAmp;
     [SerializeField] private FloatVariable _playerPenetration;
     [SerializeField] private FloatVariable _playerMaxRange;
-    
     private Transform _ownerTransform;
     private float _timer;
     
@@ -40,21 +40,18 @@ public class Weapon : MonoBehaviour
     private void ShootAtClosestEnemy()
     {
         var closestEnemy = _scriptableListEnemy.GetClosest(transform.position,_playerMaxRange);
-
+        
         if (closestEnemy == null) return;
         var direction = closestEnemy.transform.position - _ownerTransform.position;
-        SpawnProjectile(direction.normalized);
+        SpawnProjectile(direction.normalized);  
     }
 
     private void SpawnProjectile(Vector3 directionNormalized)
     {
         var spawnPoint = _ownerTransform.position + directionNormalized * _spawnOffset;
-        
-        spawnPoint.y = _ownerTransform.position.y;
-        
-        var projectile = Instantiate(_projectilePrefab, spawnPoint, Quaternion.identity);
-        
-        projectile.Init(GetDamage(), _playerPenetration, directionNormalized);
+
+        Attack attack = ObjectPool.Instance.GetObject(_attackPrefab);
+        attack.Init(GetDamage(), _playerPenetration, directionNormalized, spawnPoint);
     }
 
     private float GetDamage()
@@ -65,7 +62,7 @@ public class Weapon : MonoBehaviour
 
         if (isCriticalHit)
         {
-            damage *= _playerCritMult.Value;
+            damage *= (1 + _playerCritMult.Value);
         }
         
         return damage;

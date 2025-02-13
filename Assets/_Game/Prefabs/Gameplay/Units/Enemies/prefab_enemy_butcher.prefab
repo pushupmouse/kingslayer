@@ -305,8 +305,7 @@ MonoBehaviour:
   _enemyGrowthData: {fileID: 11400000, guid: ca15424f911fd3a4db26fc77a94c15ee, type: 2}
   _currentRoundPhase: {fileID: 11400000, guid: 80ab0fd2bd78993479c715daec61f8ac, type: 2}
   _playerPosition: {fileID: 11400000, guid: 1bacc63e5a82e374bb2c9940397041d9, type: 2}
-  _projectilePrefab: {fileID: 3286829378304052771, guid: 6aaf94fbbc09ad446b0eee209cfd6104, type: 3}
-  _slashPrefab: {fileID: 8521261236770402123, guid: 1979fdebbe9ea914da667879acf86e4c, type: 3}
+  _attackPrefab: {fileID: 8521261236770402123, guid: 1979fdebbe9ea914da667879acf86e4c, type: 3}
   _spawnOffsetProjectile:
     UseLocal: 1
     LocalValue: 0.5

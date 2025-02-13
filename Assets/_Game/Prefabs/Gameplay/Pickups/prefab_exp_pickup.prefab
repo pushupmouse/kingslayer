@@ -240,7 +240,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8989346494056620262}
   - component: {fileID: 6245624940055160862}
-  - component: {fileID: 344297635194005653}
   - component: {fileID: 4278592298915442858}
   - component: {fileID: 3840271915257431317}
   m_Layer: 12
@@ -301,33 +300,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &344297635194005653
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6315692129099242043}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &4278592298915442858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,7 +313,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCurrentExperience: {fileID: 11400000, guid: be6ec52862a20014f80d6559480e53d1, type: 2}
+  _playerTransform: {fileID: 11400000, guid: 1bacc63e5a82e374bb2c9940397041d9, type: 2}
   _expPickupValue: {fileID: 11400000, guid: 7c2e912cf62d2e744bd02c33947fa952, type: 2}
+  _trail: {fileID: 5864240110262299497}
+  _attractSpeed: 20
 --- !u!114 &3840271915257431317
 MonoBehaviour:
   m_ObjectHideFlags: 0

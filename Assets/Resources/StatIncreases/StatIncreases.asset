@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     items:
-      keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000
+      keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000
       values:
       - height: 25
         cells:
@@ -109,7 +109,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: Epic
+            value: Rare
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -133,7 +133,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: Epic
+            value: Rare
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -157,7 +157,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: Legendary
+            value: Epic
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -181,7 +181,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: Epic
+            value: Rare
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -398,78 +398,6 @@ MonoBehaviour:
             UOs: []
           - rawValue: 
             value: Rare
-            UnityObject: {fileID: 0}
-            UOs: []
-      - height: 25
-        cells:
-          keys: 0000000001000000020000000300000004000000
-          values:
-          - rawValue: 
-            value: HealthRegen
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: Mult
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: True
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 0.5
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: Legendary
-            UnityObject: {fileID: 0}
-            UOs: []
-      - height: 25
-        cells:
-          keys: 0000000001000000020000000300000004000000
-          values:
-          - rawValue: 
-            value: Speed
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: Mult
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: True
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 0.075
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: Legendary
-            UnityObject: {fileID: 0}
-            UOs: []
-      - height: 25
-        cells:
-          keys: 0000000001000000020000000300000004000000
-          values:
-          - rawValue: 
-            value: MaxRange
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: Mult
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: True
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 0.075
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: Legendary
             UnityObject: {fileID: 0}
             UOs: []
   columnHeaders:

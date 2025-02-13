@@ -11,6 +11,11 @@ public class HealthBar : MonoBehaviour
     
     private void Start()
     {
+        Init();
+    }
+
+    public void Init()
+    {
         HideHealthBar();
     }
 
