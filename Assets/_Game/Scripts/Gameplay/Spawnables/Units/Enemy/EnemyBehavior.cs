@@ -8,19 +8,28 @@ using Random = UnityEngine.Random;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    [Header("Stats")]
     [SerializeField] private EnemyType _type;
-    [SerializeField] private AttackType _attackType;
     [SerializeField] private YadeSheetData _initEnemyStatsData;
     [SerializeField] private YadeSheetData _enemyGrowthData;
     [SerializeField] private IntVariable _currentRoundPhase;
-    [SerializeField] private Vector2Variable _playerPosition;
+    
+    [Header("Attack")]
+    [SerializeField] private AttackType _attackType;
     [SerializeField] private Attack _attackPrefab;
+    [SerializeField] private Attack _critAttackPrefab;
     [SerializeField] private FloatReference _spawnOffsetProjectile;
+    [SerializeField, Range(0f, 1f)] private float _attackDeviaton;
+    
+    [Header("Other")]
+    [SerializeField] private Vector2Variable _playerPosition;
+    [SerializeField] private float _idleDuration;
+
 
     private StateType _stateType;
     private float _attackTimer = 0;
     private bool _canAttack = true; // Attack is initially ready
-    private bool _isIdleCooldown = false; // Controls idle delay after attacking
+    private bool _isIdling = false; // Controls idle delay after attacking
     
     private float _critRate;
     private float _critMult;
@@ -59,7 +68,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         SwitchState(StateType.Idle);
         _canAttack = true;
-        _isIdleCooldown = false;
+        _isIdling = false;
     }
 
     private void Init()
@@ -93,7 +102,7 @@ public class EnemyBehavior : MonoBehaviour
             }
         }
 
-        if (_isIdleCooldown) return; // Stop processing until idle delay is done
+        if (_isIdling) return; // Stop processing until idle delay is done
 
         float distanceToTarget = Vector3.Distance(_playerPosition.Value, transform.position);
 
@@ -139,25 +148,42 @@ public class EnemyBehavior : MonoBehaviour
     {
         var directionNormalized = (_playerPosition - (Vector2)transform.position).normalized;
         
+        Vector2 randomOffset = Random.insideUnitCircle * _attackDeviaton;
+        directionNormalized = (directionNormalized + randomOffset).normalized;
+        
+        SpawnAttack(directionNormalized);
+    }
+
+    private void SpawnAttack(Vector2 directionNormalized)
+    {
+        // Determine spawn position
         Vector2 spawnPosition = (Vector2)transform.position + directionNormalized * 
             (_attackType == AttackType.Melee ? _range : _spawnOffsetProjectile);
 
-        Attack attack = ObjectPool.Instance.GetObject(_attackPrefab);
-        
-        attack.Init(GetDamage(), _penetration, directionNormalized, spawnPosition);
-    }
-
-    private float GetDamage()
-    {
-        var damage = _attack * (1 + _amp);
-        
+        // Determine if the attack is a critical hit
         bool isCriticalHit = Random.value < _critRate;
+
+        // Choose the appropriate attack prefab
+        Attack attackPrefab = isCriticalHit ? _critAttackPrefab : _attackPrefab;
+
+        // Get an object from the pool
+        Attack attack = ObjectPool.Instance.GetObject(attackPrefab);
+
+        // Calculate damage
+        float damage = GetDamage(isCriticalHit);
+
+        attack.Init(damage, _penetration, directionNormalized, spawnPosition);
+    }
+    
+    public float GetDamage(bool isCriticalHit)
+    {
+        float damage = _attack * (1 + _amp);
 
         if (isCriticalHit)
         {
             damage *= (1 + _critMult);
         }
-        
+
         return damage;
     }
     
@@ -168,16 +194,24 @@ public class EnemyBehavior : MonoBehaviour
 
     private IEnumerator<float> IdleDelay()
     {
-        _isIdleCooldown = true;
+        _isIdling = true;
         SwitchState(StateType.Idle);
-        yield return Timing.WaitForSeconds(1f / _attackSpeed); // Hardcoded 2-second idle
-        _isIdleCooldown = false;
+        yield return Timing.WaitForSeconds(_idleDuration);
+        _isIdling = false;
 
-        // Determine next state
-        float distanceToTarget = Vector3.Distance(_playerPosition.Value, transform.position);
-        if (distanceToTarget > _range) SwitchState(StateType.Chase);
-        else if (distanceToTarget <= _range && _canAttack) SwitchState(StateType.Attack);
+        // Let MyUpdate handle attack cooldown naturally
+        float distanceToTarget = Vector2.Distance(_playerPosition.Value, transform.position);
+
+        if (distanceToTarget > _range)
+        {
+            SwitchState(StateType.Chase);
+        }
+        else if (_canAttack) // Ensure we don't attack before cooldown is up
+        {
+            SwitchState(StateType.Attack);
+        }
     }
+
     
     private enum StateType
     {

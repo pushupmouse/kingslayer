@@ -300,16 +300,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 1
-  _attackType: 0
   _initEnemyStatsData: {fileID: 11400000, guid: b914fac8156c50742abbda3af8c0218c, type: 2}
   _enemyGrowthData: {fileID: 11400000, guid: ca15424f911fd3a4db26fc77a94c15ee, type: 2}
   _currentRoundPhase: {fileID: 11400000, guid: 80ab0fd2bd78993479c715daec61f8ac, type: 2}
-  _playerPosition: {fileID: 11400000, guid: 1bacc63e5a82e374bb2c9940397041d9, type: 2}
+  _attackType: 0
   _attackPrefab: {fileID: 8521261236770402123, guid: 1979fdebbe9ea914da667879acf86e4c, type: 3}
+  _critAttackPrefab: {fileID: 8521261236770402123, guid: 3c00083b7b3bbf44fb29fc9244879e39, type: 3}
   _spawnOffsetProjectile:
     UseLocal: 1
-    LocalValue: 0.5
+    LocalValue: 0
     Variable: {fileID: 0}
+  _attackDeviaton: 0
+  _playerPosition: {fileID: 11400000, guid: 1bacc63e5a82e374bb2c9940397041d9, type: 2}
+  _idleDuration: 0.5
 --- !u!1001 &6424471060407591525
 PrefabInstance:
   m_ObjectHideFlags: 0

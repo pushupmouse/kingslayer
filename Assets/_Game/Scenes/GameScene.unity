@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerPosition: {fileID: 11400000, guid: 1bacc63e5a82e374bb2c9940397041d9, type: 2}
-  _spawnRange: {x: 15, y: 15}
+  _spawnRange: {x: 15, y: 20}
   _spawnArea: {fileID: 2085935573}
   _enemySpawnData: {fileID: 11400000, guid: d70a5a1502442f8468f6d8d5864d4e26, type: 2}
   _currentRoundPhase: {fileID: 11400000, guid: 80ab0fd2bd78993479c715daec61f8ac, type: 2}
@@ -2065,6 +2065,10 @@ PrefabInstance:
       propertyPath: _attackPrefab
       value: 
       objectReference: {fileID: 6259744235353326766, guid: 8f698969496030f45a18d894b8b5d226, type: 3}
+    - target: {fileID: 1519480093443552627, guid: 8d2da609eb2c66e45a89db3fabe41eb0, type: 3}
+      propertyPath: _critAttackPrefab
+      value: 
+      objectReference: {fileID: 6259744235353326766, guid: 3d07e2e0b0b2caa4da2b7872cb2d222b, type: 3}
     - target: {fileID: 3079374620101146418, guid: 8d2da609eb2c66e45a89db3fabe41eb0, type: 3}
       propertyPath: m_Name
       value: Player

@@ -5,8 +5,8 @@ public class Attack : MonoBehaviour
 {
     [SerializeField] private FloatReference _lifeTime;
 
-    private float _damage;
-    private float _penetration;
+    protected float _damage;
+    protected float _penetration;
     private bool _hasHit = false;
     
     protected virtual void OnEnable()
@@ -14,7 +14,7 @@ public class Attack : MonoBehaviour
         Invoke(nameof(Deactivate), _lifeTime);
     }
     
-    public virtual void Init(float damage, float penetration, Vector3 direction, Vector3 spawnPosition)
+    public void Init(float damage, float penetration, Vector3 direction, Vector3 spawnPosition)
     {
         _damage = damage;
         _penetration = penetration;
@@ -29,19 +29,13 @@ public class Attack : MonoBehaviour
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (_hasHit) return;
-    
-        _hasHit = true;
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy") && other.TryGetComponent<Enemy>(out var enemy))
+        if (other.TryGetComponent<IDamageable>(out var damageable))
         {
-            enemy.TakeDamage(_damage, _penetration);
+            _hasHit = true;
+            damageable.TakeDamage(_damage, _penetration);
+            Deactivate();
         }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Player") && other.TryGetComponent<Player>(out var player))
-        {
-            player.TakeDamage(_damage, _penetration);
-        }
-
-        Deactivate();
     }
 
     protected virtual void Deactivate()

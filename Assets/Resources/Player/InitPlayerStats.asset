@@ -69,7 +69,7 @@ MonoBehaviour:
           keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
           values:
           - rawValue: 
-            value: 30
+            value: 40
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -77,27 +77,27 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 0.05
+            value: 0.1
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 0.25
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 0
+            value: 0.2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
             value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0.1
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 70
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
             value: 50
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 30
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 

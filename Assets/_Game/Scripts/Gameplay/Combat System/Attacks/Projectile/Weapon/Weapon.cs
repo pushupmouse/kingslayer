@@ -1,12 +1,12 @@
 using MEC;
 using Obvious.Soap;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour, IAttack
 {
     [SerializeField] private ScriptableListEnemy _scriptableListEnemy;
     [SerializeField] private Attack _attackPrefab;
+    [SerializeField] private Attack _critAttackPrefab;
     [SerializeField] private FloatVariable _spawnOffset;
     [Header("Weapon Stats")]
     [SerializeField] private FloatVariable _playerAttack;
@@ -43,28 +43,38 @@ public class Weapon : MonoBehaviour
         
         if (closestEnemy == null) return;
         var direction = closestEnemy.transform.position - _ownerTransform.position;
-        SpawnProjectile(direction.normalized);  
+        SpawnAttack(direction.normalized);  
     }
 
-    private void SpawnProjectile(Vector3 directionNormalized)
+    public void SpawnAttack(Vector2 directionNormalized)
     {
-        var spawnPoint = _ownerTransform.position + directionNormalized * _spawnOffset;
+        Vector2 spawnPoint = (Vector2)_ownerTransform.position + directionNormalized * _spawnOffset;
 
-        Attack attack = ObjectPool.Instance.GetObject(_attackPrefab);
-        attack.Init(GetDamage(), _playerPenetration, directionNormalized, spawnPoint);
-    }
-
-    private float GetDamage()
-    {
-        var damage = _playerAttack.Value * (1 + _playerAmp.Value);
-        
+        // Determine if the attack is a critical hit
         bool isCriticalHit = Random.value < _playerCritRate.Value;
+
+        // Choose the appropriate projectile prefab
+        Attack attackPrefab = isCriticalHit ? _critAttackPrefab : _attackPrefab;
+
+        // Get an object from the pool
+        Attack attack = ObjectPool.Instance.GetObject(attackPrefab);
+
+        // Calculate damage
+        float damage = GetDamage(isCriticalHit);
+
+        // Initialize the attack
+        attack.Init(damage, _playerPenetration, directionNormalized, spawnPoint);
+    }
+
+    public float GetDamage(bool isCriticalHit)
+    {
+        float damage = _playerAttack.Value * (1 + _playerAmp.Value);
 
         if (isCriticalHit)
         {
             damage *= (1 + _playerCritMult.Value);
         }
-        
+
         return damage;
     }
 }

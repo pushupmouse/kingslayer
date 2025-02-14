@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4178666883029758207}
-  - component: {fileID: 3597518768696099610}
+  - component: {fileID: 2861994670369497836}
   - component: {fileID: 3286829378304052771}
   m_Layer: 11
-  m_Name: prefab_projectile_enemyRanger
+  m_Name: prefab_projectile_crit_ranger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,8 +34,8 @@ Transform:
   - {fileID: 8423086709179254015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &3597518768696099610
-CircleCollider2D:
+--- !u!61 &2861994670369497836
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -66,9 +66,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -5.5, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 11, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!114 &3286829378304052771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,13 +91,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9e21968bd9f38045874374a521740de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed:
-    UseLocal: 1
-    LocalValue: 10
-    Variable: {fileID: 0}
   _lifeTime:
     UseLocal: 1
     LocalValue: 1.5
+    Variable: {fileID: 0}
+  _speed:
+    UseLocal: 1
+    LocalValue: 20
     Variable: {fileID: 0}
   _trail: {fileID: 1891822211148534678}
 --- !u!1 &4911810498022357810
@@ -174,7 +184,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.06486511
+        value: 0.093688965
         inSlope: 1.7104471
         outSlope: 1.7104471
         tangentMode: 0
@@ -183,7 +193,7 @@ TrailRenderer:
         outWeight: 0.15449008
       - serializedVersion: 3
         time: 0.07846941
-        value: 0.32359278
+        value: 0.35242426
         inSlope: 0.003484082
         outSlope: 0.003484082
         tangentMode: 0
@@ -204,23 +214,23 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.045582294, g: 0, b: 1, a: 1}
-      key1: {r: 1, g: 0, b: 0.054558277, a: 0.58431375}
-      key2: {r: 0.011764699, g: 0.9529412, b: 0.9170673, a: 0}
-      key3: {r: 1, g: 0.5259112, b: 0, a: 0}
+      key0: {r: 1, g: 0.0017756143, b: 0, a: 1}
+      key1: {r: 1, g: 0.81568635, b: 0, a: 0.58431375}
+      key2: {r: 1, g: 0.81568635, b: 0, a: 0}
+      key3: {r: 0.05643177, g: 0, b: 1, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 77
-      ctime1: 20894
-      ctime2: 44178
-      ctime3: 51426
+      ctime1: 32151
+      ctime2: 60678
+      ctime3: 42945
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 43407
+      atime0: 29067
       atime1: 64841
       atime2: 0
       atime3: 0

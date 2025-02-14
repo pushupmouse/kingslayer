@@ -32,9 +32,22 @@ public class Enemy : MonoBehaviour, IDamageable
         [DataField(3)] public string Defense;
     }
 
+    private void Awake()
+    {
+        if (_runtimeMaxHealth == null)
+            _runtimeMaxHealth = SoapUtils.CreateRuntimeInstance<FloatVariable>($"float_{gameObject.name}MaxHealth");
+        
+        
+        if (_runtimeCurrentHealth == null)
+            _runtimeCurrentHealth = SoapUtils.CreateRuntimeInstance<FloatVariable>($"float_{gameObject.name}CurrentHealth");
+    }
+
     private void OnEnable()
     {
         _scriptableListEnemy.Add(this);
+        
+        _runtimeMaxHealth.OnValueChanged += OnFinalMaxHealthChanged;
+        _runtimeCurrentHealth.OnValueChanged += OnCurrentHealthChanged;
         
         InitStats();
 
@@ -44,6 +57,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void OnDisable()
     {
+        _runtimeMaxHealth.Value = _maxHealth;
+        
         _runtimeMaxHealth.OnValueChanged -= OnFinalMaxHealthChanged;
         _runtimeCurrentHealth.OnValueChanged -= OnCurrentHealthChanged;
     }
@@ -64,16 +79,6 @@ public class Enemy : MonoBehaviour, IDamageable
         
         _maxHealth = float.Parse(statList[index].MaxHealth) * (1 + _maxHealthMult * _currentRoundPhase.Value);
         _defense = float.Parse(statList[index].Defense) * (1 + _defenseMult * _currentRoundPhase.Value);
-        
-        if (_runtimeMaxHealth == null)
-            _runtimeMaxHealth = SoapUtils.CreateRuntimeInstance<FloatVariable>($"float_{gameObject.name}MaxHealth");
-        
-        
-        if (_runtimeCurrentHealth == null)
-            _runtimeCurrentHealth = SoapUtils.CreateRuntimeInstance<FloatVariable>($"float_{gameObject.name}CurrentHealth");
-        
-        _runtimeMaxHealth.OnValueChanged += OnFinalMaxHealthChanged;
-        _runtimeCurrentHealth.OnValueChanged += OnCurrentHealthChanged;
         
         _runtimeMaxHealth.Value = _maxHealth;
         _runtimeCurrentHealth.Value = _runtimeMaxHealth;
