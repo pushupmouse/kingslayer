@@ -69,11 +69,11 @@ MonoBehaviour:
           keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
           values:
           - rawValue: 
-            value: 40
+            value: 30
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 1.5
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -109,7 +109,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 10
+            value: 8
             UnityObject: {fileID: 0}
             UOs: []
   columnHeaders:

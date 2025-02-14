@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
 using Obvious.Soap;
 using UnityEngine;
@@ -8,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera virtualCam;
     [SerializeField] private FloatVariable _playerMaxRange;
+    [SerializeField] private float _minimumZoom = 10f;
 
     private void OnEnable()
     {
@@ -23,7 +22,7 @@ public class CameraController : MonoBehaviour
     {
         if (virtualCam != null)
         {
-            virtualCam.m_Lens.OrthographicSize = newRange;
+            virtualCam.m_Lens.OrthographicSize = Mathf.Max(newRange, _minimumZoom);
         }
     }
 }

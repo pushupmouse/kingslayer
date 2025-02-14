@@ -1,4 +1,3 @@
-using System;
 using MEC;
 using Obvious.Soap;
 using UnityEngine;
@@ -9,11 +8,9 @@ public class Projectile : Attack
     [SerializeField] private FloatReference _speed;
     [SerializeField] private TrailRenderer _trail;
 
-    protected override void OnEnable()
+    protected void OnEnable()
     {
         Timing.RunCoroutine(Utility.EmulateUpdate(MyUpdate, this).CancelWith(gameObject));
-        
-        base.OnEnable();
     }
 
     private void MyUpdate()

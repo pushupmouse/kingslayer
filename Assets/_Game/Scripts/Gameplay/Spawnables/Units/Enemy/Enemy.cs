@@ -42,34 +42,12 @@ public class Enemy : MonoBehaviour, IDamageable
             _runtimeCurrentHealth = SoapUtils.CreateRuntimeInstance<FloatVariable>($"float_{gameObject.name}CurrentHealth");
     }
 
-    private void OnEnable()
-    {
-        _scriptableListEnemy.Add(this);
-        
-        _runtimeMaxHealth.OnValueChanged += OnFinalMaxHealthChanged;
-        _runtimeCurrentHealth.OnValueChanged += OnCurrentHealthChanged;
-        
-        InitStats();
-
-        if(HealthBar != null)
-            HealthBar.Init();
-    }
-
-    private void OnDisable()
-    {
-        _runtimeMaxHealth.Value = _maxHealth;
-        
-        _runtimeMaxHealth.OnValueChanged -= OnFinalMaxHealthChanged;
-        _runtimeCurrentHealth.OnValueChanged -= OnCurrentHealthChanged;
-    }
-
     public void Init(Vector3 spawnPoint)
     {
         transform.position = spawnPoint;
-    }
-    
-    public void InitStats()
-    {
+        
+        _scriptableListEnemy.Add(this);
+        
         int index = (int)_type;
         var growthList = _enemyGrowthData.AsList<EnemyGrowth>();
         _maxHealthMult = float.Parse(growthList[index].MaxHealth);
@@ -82,6 +60,12 @@ public class Enemy : MonoBehaviour, IDamageable
         
         _runtimeMaxHealth.Value = _maxHealth;
         _runtimeCurrentHealth.Value = _runtimeMaxHealth;
+                
+        _runtimeMaxHealth.OnValueChanged += OnFinalMaxHealthChanged;
+        _runtimeCurrentHealth.OnValueChanged += OnCurrentHealthChanged;
+        
+        if(HealthBar != null)
+            HealthBar.Init();
     }
 
     public void OnFinalMaxHealthChanged(float newMaxHealth)
@@ -100,6 +84,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        _runtimeMaxHealth.OnValueChanged -= OnFinalMaxHealthChanged;
+        _runtimeCurrentHealth.OnValueChanged -= OnCurrentHealthChanged;
+        
         _scriptableListEnemy.Remove(this);
         ObjectPool.Instance.ReturnObject(this);
     }

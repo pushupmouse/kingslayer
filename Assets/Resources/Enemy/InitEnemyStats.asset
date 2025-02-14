@@ -177,7 +177,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 8
+            value: 10
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -225,7 +225,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 6
+            value: 8
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -265,15 +265,15 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 50
+            value: 60
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 25
+            value: 30
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 5
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -321,7 +321,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 6
+            value: 5
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -377,7 +377,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 10
+            value: 9
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -425,7 +425,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 10
+            value: 8
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 

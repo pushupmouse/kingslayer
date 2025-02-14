@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using MEC;
 using Obvious.Soap;
@@ -86,27 +85,21 @@ public class EnemyBehavior : MonoBehaviour
         _attackSpeed = float.Parse(statList[index].AttackSpeed);
         _speed = float.Parse(statList[index].Speed);
         _range = float.Parse(statList[index].Range);
+        
+        _canAttack = true;
+        _attackTimer = 0f;
+        _isIdling = false;
+        _stateType = StateType.Idle;
     }
     
     private void MyUpdate()
     {
-        // If attack is on cooldown, track the timer
-        if (!_canAttack)
-        {
-            _attackTimer += Time.deltaTime;
+        HandleAttackCooldown(); // Extracted cooldown logic into a method
 
-            if (_attackTimer >= 1f / _attackSpeed)
-            {
-                _canAttack = true;
-                _attackTimer = 0f;
-            }
-        }
+        if (_isIdling) return; // Stop processing if idling
 
-        if (_isIdling) return; // Stop processing until idle delay is done
+        float distanceToTarget = GetDistanceToTarget(); // Consistent distance calculation
 
-        float distanceToTarget = Vector3.Distance(_playerPosition.Value, transform.position);
-
-        // State logic
         switch (_stateType)
         {
             case StateType.Idle:
@@ -137,11 +130,36 @@ public class EnemyBehavior : MonoBehaviour
                 break;
         }
     }
-
+    
+    private float GetDistanceToTarget()
+    {
+        return Vector2.Distance(_playerPosition.Value, transform.position);
+    }
+    
     private void Chase()
     {
         Vector2 direction = (_playerPosition.Value - (Vector2)transform.position).normalized;
         transform.position += (Vector3)(direction * (_speed * Time.deltaTime));
+    }
+    
+    private void HandleAttackCooldown()
+    {
+        if (!_canAttack)
+        {
+            _attackTimer += Time.deltaTime;
+            if (_attackTimer >= 1f / _attackSpeed)
+            {
+                _canAttack = true;
+                _attackTimer = 0f;
+
+                // Ensure state switches back to Attack when cooldown is up
+                float distanceToTarget = GetDistanceToTarget();
+                if (_stateType == StateType.Idle && distanceToTarget <= _range)
+                {
+                    SwitchState(StateType.Attack);
+                }
+            }
+        }
     }
 
     private void PerformAttack()
@@ -191,7 +209,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         _stateType = newState;
     }
-
+    
     private IEnumerator<float> IdleDelay()
     {
         _isIdling = true;
@@ -199,19 +217,17 @@ public class EnemyBehavior : MonoBehaviour
         yield return Timing.WaitForSeconds(_idleDuration);
         _isIdling = false;
 
-        // Let MyUpdate handle attack cooldown naturally
         float distanceToTarget = Vector2.Distance(_playerPosition.Value, transform.position);
 
         if (distanceToTarget > _range)
         {
             SwitchState(StateType.Chase);
         }
-        else if (_canAttack) // Ensure we don't attack before cooldown is up
+        else if (_canAttack) // Only attack if cooldown is up
         {
             SwitchState(StateType.Attack);
         }
     }
-
     
     private enum StateType
     {

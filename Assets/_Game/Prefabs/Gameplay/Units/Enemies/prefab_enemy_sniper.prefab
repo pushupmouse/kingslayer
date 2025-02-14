@@ -310,7 +310,7 @@ MonoBehaviour:
     UseLocal: 1
     LocalValue: 0.5
     Variable: {fileID: 0}
-  _attackDeviaton: 0.15
+  _attackDeviaton: 0.1
   _playerPosition: {fileID: 11400000, guid: 1bacc63e5a82e374bb2c9940397041d9, type: 2}
   _idleDuration: 0.25
 --- !u!1001 &6424471060407591525

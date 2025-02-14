@@ -8,12 +8,7 @@ public class Attack : MonoBehaviour
     protected float _damage;
     protected float _penetration;
     private bool _hasHit = false;
-    
-    protected virtual void OnEnable()
-    {
-        Invoke(nameof(Deactivate), _lifeTime);
-    }
-    
+
     public void Init(float damage, float penetration, Vector3 direction, Vector3 spawnPosition)
     {
         _damage = damage;
@@ -24,6 +19,8 @@ public class Attack : MonoBehaviour
         
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
+        
+        Invoke(nameof(Deactivate), _lifeTime);
     }
     
     protected virtual void OnTriggerEnter2D(Collider2D other)

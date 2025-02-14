@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5593449242287295875}
-  - component: {fileID: 1789897184759957710}
+  - component: {fileID: 3729448278776638551}
   - component: {fileID: 2943194214191843654}
   - component: {fileID: 7415757935446783014}
   - component: {fileID: 2357831167971354204}
@@ -42,8 +42,8 @@ Transform:
   - {fileID: 1060692721855074643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1789897184759957710
-CircleCollider2D:
+--- !u!61 &3729448278776638551
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -71,12 +71,22 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.75, y: 0.75}
+  m_EdgeRadius: 0
 --- !u!50 &2943194214191843654
 Rigidbody2D:
   serializedVersion: 4
@@ -116,7 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7743aa62436b64885ecf44dc67d2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onPlayerHealed: {fileID: 11400000, guid: 6578cf70365be894ca6a1fcd631f9db8, type: 2}
   _onPlayerDamaged: {fileID: 11400000, guid: c7afc73bdcf216b44a438ea929efa449, type: 2}
   _onPlayerDeath: {fileID: 11400000, guid: a98686607372275409d3fa503955f1ae, type: 2}
   _defCoefficient: {fileID: 11400000, guid: 05e579ade1d07714f895c39348781ebb, type: 2}
@@ -414,6 +423,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7994949934235647852, guid: efbfad46c89b7d8449b87a42f5b92147, type: 3}
+      propertyPath: _attackPrefab
+      value: 
+      objectReference: {fileID: 6259744235353326766, guid: 8f698969496030f45a18d894b8b5d226, type: 3}
+    - target: {fileID: 7994949934235647852, guid: efbfad46c89b7d8449b87a42f5b92147, type: 3}
+      propertyPath: _critAttackPrefab
+      value: 
+      objectReference: {fileID: 6259744235353326766, guid: 3d07e2e0b0b2caa4da2b7872cb2d222b, type: 3}
     - target: {fileID: 9115813662570366403, guid: efbfad46c89b7d8449b87a42f5b92147, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
