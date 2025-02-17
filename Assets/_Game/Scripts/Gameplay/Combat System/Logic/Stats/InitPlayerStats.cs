@@ -41,7 +41,6 @@ public class InitPlayerStats : Singleton<InitPlayerStats>
 
     private void InitStats()
     {
-        Debug.Log("i ran");
         var list = _initPlayerStatsData.AsList<PlayerStat>();
         
         _baseAttack.Value = float.Parse(list[1].Attack);

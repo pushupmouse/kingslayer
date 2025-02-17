@@ -26,6 +26,14 @@ public class BoostCenter : MonoBehaviour
     private List<StatIncreaseData> _epicStatIncreaseList = new List<StatIncreaseData>();
     private List<StatIncreaseData> _legendaryStatIncreaseList = new List<StatIncreaseData>();
     
+    private List<RarityType> _rarities = new List<RarityType>(); 
+    private List<StatIncreaseButton> _siButtons = new List<StatIncreaseButton>(); 
+    private List<GameObject> _miniSIs = new List<GameObject>();
+    private int _effectiveLevel;
+    private int _numMiniContainers;
+    private int _numSIButtons = 3;
+    private int _numMiniPreviewsPerContainer = 3;
+
     private class StatIncreaseChance
     {
         [DataField(0)] public string Level;
@@ -34,26 +42,18 @@ public class BoostCenter : MonoBehaviour
         [DataField(3)] public string Epic;
         [DataField(4)] public string Legendary;
     }
-
-    private List<RarityType> _rarities = new List<RarityType>(); 
-    private List<StatIncreaseButton> _siButtons = new List<StatIncreaseButton>(); 
-    private List<GameObject> _miniSIs = new List<GameObject>(); // Store references to Mini SIs
-    private int _effectiveLevel;
-    private int _numMiniContainers;
-    private int _numSIButtons = 3;
-    private int _numMiniPreviewsPerContainer = 3;
+    
     private void Awake()
     {
         _statIncreaseList.ForEach(a => a.Reset());
-        
         SortAbilitiesByRarity();
     }
-    
+
     private void Start()
     {
         _effectiveLevel = _currentPlayerLevel.Value - _excessPlayerLevel.Value + 1;
         _numMiniContainers = Mathf.Max(0, _excessPlayerLevel.Value - 1);
-        
+
         if (_excessPlayerLevel.Value >= 1)
         {
             DetermineAllRarities();
@@ -63,49 +63,55 @@ public class BoostCenter : MonoBehaviour
 
     private void SortAbilitiesByRarity()
     {
+        ClearStatIncreaseLists();
+
+        foreach (var statIncrease in _statIncreaseList)
+        {
+            RarityType rarity = statIncrease.GetRarityType();
+            AddToRarityList(rarity, statIncrease);
+        }
+    }
+
+    private void ClearStatIncreaseLists()
+    {
         _commonStatIncreaseList.Clear();
         _rareStatIncreaseList.Clear();
         _epicStatIncreaseList.Clear();
         _legendaryStatIncreaseList.Clear();
+    }
 
-        foreach (var statIncrese in _statIncreaseList)
+    private void AddToRarityList(RarityType rarity, StatIncreaseData statIncrease)
+    {
+        switch (rarity)
         {
-            RarityType rarity = statIncrese.GetRarityType();
-
-            switch (rarity)
-            {
-                case RarityType.Common:
-                    _commonStatIncreaseList.Add(statIncrese);
-                    break;
-                case RarityType.Rare:
-                    _rareStatIncreaseList.Add(statIncrese);
-                    break;
-                case RarityType.Epic:
-                    _epicStatIncreaseList.Add(statIncrese);
-                    break;
-                case RarityType.Legendary:
-                    _legendaryStatIncreaseList.Add(statIncrese);
-                    break;
-                default:
-                    Debug.LogWarning("Something went wrong");
-                    break;
-            }
+            case RarityType.Common:
+                _commonStatIncreaseList.Add(statIncrease);
+                break;
+            case RarityType.Rare:
+                _rareStatIncreaseList.Add(statIncrease);
+                break;
+            case RarityType.Epic:
+                _epicStatIncreaseList.Add(statIncrease);
+                break;
+            case RarityType.Legendary:
+                _legendaryStatIncreaseList.Add(statIncrease);
+                break;
+            default:
+                Debug.LogWarning("Something went wrong");
+                break;
         }
     }
-    
+
     private void DetermineAllRarities()
     {
-        // Roll rarities for SI buttons using the first available level
         for (int i = 0; i < _numSIButtons; i++)
         {
             _rarities.Add(RollRarity(_effectiveLevel));
         }
 
-        // Roll rarities for Mini SI previews, progressing in level
         for (int j = 0; j < _numMiniContainers; j++)
         {
-            int levelForThisContainer = _effectiveLevel + j + 1; // Increase level for each mini container
-
+            int levelForThisContainer = _effectiveLevel + j + 1;
             for (int k = 0; k < _numMiniPreviewsPerContainer; k++)
             {
                 _rarities.Add(RollRarity(levelForThisContainer));
@@ -117,6 +123,12 @@ public class BoostCenter : MonoBehaviour
     {
         int rarityIndex = 0;
 
+        InstantiateStatIncreaseButtons(rarityIndex);
+        InstantiateMiniContainers(rarityIndex);
+    }
+
+    private void InstantiateStatIncreaseButtons(int rarityIndex)
+    {
         for (int i = 0; i < 3; i++)
         {
             StatIncreaseButton newButton = Instantiate(_siButton, _siContainer.transform);
@@ -128,7 +140,6 @@ public class BoostCenter : MonoBehaviour
                 _siButtons.Add(newButton);
                 newButton.Init(statIncrease.GetDescription(), statIncrease.ApplyCount, rarity);
 
-                // Attach click event
                 newButton.Button.onClick.AddListener(() =>
                 {
                     statIncrease.Apply();
@@ -136,9 +147,11 @@ public class BoostCenter : MonoBehaviour
                 });
             }
         }
+    }
 
-        int numMiniContainers = Mathf.Max(0, _excessPlayerLevel.Value - 1);
-        for (int j = 0; j < numMiniContainers; j++)
+    private void InstantiateMiniContainers(int rarityIndex)
+    {
+        for (int j = 0; j < _numMiniContainers; j++)
         {
             GameObject newMiniSI = Instantiate(_miniSI, _miniSIContainer.transform);
             _miniSIs.Add(newMiniSI);
@@ -158,12 +171,10 @@ public class BoostCenter : MonoBehaviour
 
     private void GetNextSelector()
     {
-        // Destroy the current SI buttons
-        foreach (var button in _siButtons)
-        {
-            Destroy(button.gameObject);
-        }
-        _siButtons.Clear();
+        ClearStatIncreaseLists();
+        SortAbilitiesByRarity();
+
+        DestroyButtons();
         
         if (_miniSIs.Count == 0)
         {
@@ -171,7 +182,6 @@ public class BoostCenter : MonoBehaviour
             return;
         }
 
-        // Get the first mini SI and extract its rarity previews
         GameObject firstMiniSI = _miniSIs[0];
         _miniSIs.RemoveAt(0);
 
@@ -183,11 +193,26 @@ public class BoostCenter : MonoBehaviour
             return;
         }
 
-        // Convert RarityPreviews into new SI buttons
+        InstantiateButtonsFromRarityPreviews(rarityPreviews);
+
+        Destroy(firstMiniSI);
+    }
+
+    private void DestroyButtons()
+    {
+        foreach (var button in _siButtons)
+        {
+            Destroy(button.gameObject);
+        }
+        _siButtons.Clear();
+    }
+
+    private void InstantiateButtonsFromRarityPreviews(RarityPreview[] rarityPreviews)
+    {
         foreach (RarityPreview preview in rarityPreviews)
         {
             StatIncreaseButton newButton = Instantiate(_siButton, _siContainer.transform);
-            RarityType rarity = preview.Rarity; // Get rarity directly from preview
+            RarityType rarity = preview.Rarity;
             StatIncreaseData statIncrease = GetRandomStatIncreaseByRarity(rarity);
 
             if (newButton != null)
@@ -202,54 +227,75 @@ public class BoostCenter : MonoBehaviour
                 });
             }
         }
-
-        // Remove the first Mini SI container since it's now moved to the SI container
-        Destroy(firstMiniSI);
     }
-    
+
     private RarityType RollRarity(int playerLevel)
     {
         var list = _statIncreaseChanceData.AsList<StatIncreaseChance>();
-     
         int index = Mathf.Min(playerLevel, list.Count - 1);
-    
+
         float commonRate = float.Parse(list[index].Common);
         float rareRate = float.Parse(list[index].Rare);
         float epicRate = float.Parse(list[index].Epic);
-        
+
         float roll = Random.Range(0f, 100f);
         float threshold = 0f;
-        
+
         if (roll < (threshold += commonRate)) return RarityType.Common;
         if (roll < (threshold += rareRate)) return RarityType.Rare;
         if (roll < (threshold += epicRate)) return RarityType.Epic;
-        
-        return RarityType.Legendary; // Default to Legendary if none match
+
+        return RarityType.Legendary; 
     }
-    
+
     private StatIncreaseData GetRandomStatIncreaseByRarity(RarityType rarity)
     {
+        StatIncreaseData selectedStatIncrease = null;
+        
         switch (rarity)
         {
             case RarityType.Legendary:
-                return _legendaryStatIncreaseList.Count > 0
-                    ? _legendaryStatIncreaseList[Random.Range(0, _legendaryStatIncreaseList.Count)]
-                    : _epicStatIncreaseList[Random.Range(0, _epicStatIncreaseList.Count)]; //FIX
+                selectedStatIncrease = GetAndRemoveStatIncrease(_legendaryStatIncreaseList, _epicStatIncreaseList);//fix
+                break;
+
             case RarityType.Epic:
-                return _epicStatIncreaseList[Random.Range(0, _epicStatIncreaseList.Count)];
+                selectedStatIncrease = GetAndRemoveStatIncrease(_epicStatIncreaseList);
+                break;
+
             case RarityType.Rare:
-                return _rareStatIncreaseList[Random.Range(0, _rareStatIncreaseList.Count)];
+                selectedStatIncrease = GetAndRemoveStatIncrease(_rareStatIncreaseList);
+                break;
+
             case RarityType.Common:
-                return _commonStatIncreaseList[Random.Range(0, _commonStatIncreaseList.Count)];
+                selectedStatIncrease = GetAndRemoveStatIncrease(_commonStatIncreaseList);
+                break;
+
             default:
                 Debug.LogWarning("Invalid rarity type. Returning Common abilities.");
-                return _commonStatIncreaseList[Random.Range(0, _commonStatIncreaseList.Count)];
+                selectedStatIncrease = GetAndRemoveStatIncrease(_commonStatIncreaseList);
+                break;
         }
+
+        return selectedStatIncrease;
+    }
+
+    private StatIncreaseData GetAndRemoveStatIncrease(List<StatIncreaseData> list, List<StatIncreaseData> fallbackList = null)
+    {
+        if (list.Count > 0)
+        {
+            StatIncreaseData selectedStatIncrease = list[Random.Range(0, list.Count)];
+            list.Remove(selectedStatIncrease);
+            return selectedStatIncrease;
+        }
+        //fix
+        return fallbackList != null && fallbackList.Count > 0
+            ? fallbackList[Random.Range(0, fallbackList.Count)]
+            : null;
     }
 
     private void EnterGameScene()
     {
         _excessPlayerLevel.Value = 0;
-        GameManager.Instance.ChangeScene(_gameScene.name);
+        GameManager.Instance.GoToNextRound();
     }
 }

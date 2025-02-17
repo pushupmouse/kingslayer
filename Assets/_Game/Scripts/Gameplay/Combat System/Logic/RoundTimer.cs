@@ -1,16 +1,13 @@
 using System.Collections.Generic;
 using MEC;
 using Obvious.Soap;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Yade.Runtime;
 
-public class RoundTimer : MonoBehaviour
+public class RoundTimer : Singleton<RoundTimer>
 {
     [SerializeField] private YadeSheetData _roundData;
     [SerializeField] private IntVariable _currentRound;
-    [SerializeField] private SceneAsset _boostCenterScene;
     [SerializeField] private float _sceneTransitionDelay = 5f;
     private float _duration;
     private float _elapsedTime;
@@ -22,8 +19,10 @@ public class RoundTimer : MonoBehaviour
         [DataField(1)] public string Duration;
     }
     
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         UpdateDuration(0);
         
         _currentRound.OnValueChanged += UpdateDuration;
@@ -49,12 +48,14 @@ public class RoundTimer : MonoBehaviour
     private IEnumerator<float> _EnterBoostCenterScene(float delay)
     {
         yield return Timing.WaitForSeconds(delay);
-        GameManager.Instance.ChangeScene(_boostCenterScene.name);
+        GameManager.Instance.GoToBoostCenter();
     }
 
-    private void EnterNextRound()
+    public void EnterNextRound()
     {
         _currentRound.Add(1);
+        
+        StartTimer();
     }
 
     private void UpdateDuration(int obj)
@@ -83,6 +84,5 @@ public class RoundTimer : MonoBehaviour
     private void StopTimer()
     {
         _isRunning = false;
-        Debug.Log("Timer stopped");
     }
 }

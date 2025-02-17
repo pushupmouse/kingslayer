@@ -49,7 +49,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 5
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -69,7 +69,27 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 5
+            value: 3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 2
+            UnityObject: {fileID: 0}
+            UOs: []
+      - height: 25
+        cells:
+          keys: 00000000010000000200000003000000
+          values:
+          - rawValue: 
+            value: 3
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -81,39 +101,19 @@ MonoBehaviour:
           keys: 00000000010000000200000003000000
           values:
           - rawValue: 
+            value: 4
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
+            value: 0
+            UnityObject: {fileID: 0}
+            UOs: []
+          - rawValue: 
             value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 0
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 5
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 4
-            UnityObject: {fileID: 0}
-            UOs: []
-      - height: 25
-        cells:
-          keys: 00000000010000000200000003000000
-          values:
-          - rawValue: 
-            value: 4
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 0
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 4.75
-            UnityObject: {fileID: 0}
-            UOs: []
-          - rawValue: 
-            value: 4
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -129,7 +129,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 4.5
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -149,7 +149,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 4.25
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -169,7 +169,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 4
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -189,11 +189,11 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 4
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 6
+            value: 5
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -209,11 +209,11 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 4
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 7
+            value: 6
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -229,11 +229,11 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 3.75
+            value: 3
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 7
+            value: 6
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -249,7 +249,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 3.5
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -269,7 +269,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 3.25
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -289,11 +289,11 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 3
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 7
+            value: 8
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -309,7 +309,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 3
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -329,7 +329,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 3
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -349,11 +349,11 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 3
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 10
+            value: 9
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -369,7 +369,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 2.75
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -389,7 +389,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 2.5
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
@@ -409,11 +409,11 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 2.25
+            value: 2
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 10
+            value: 11
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
@@ -433,7 +433,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 10
+            value: 11
             UnityObject: {fileID: 0}
             UOs: []
   columnHeaders:

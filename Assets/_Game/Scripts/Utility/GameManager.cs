@@ -1,12 +1,22 @@
-using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public void ChangeScene(string sceneName)
+    [SerializeField] private SceneAsset _gameScene;
+    [SerializeField] private SceneAsset _boostCenterScene;
+
+    public void GoToBoostCenter()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(_boostCenterScene.name);
+    }
+
+    public void GoToNextRound()
+    {
+        SceneManager.LoadScene(_gameScene.name);
+        
+        RoundTimer.Instance.EnterNextRound();
     }
     
     public void PauseGame()

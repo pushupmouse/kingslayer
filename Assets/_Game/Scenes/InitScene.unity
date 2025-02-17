@@ -122,6 +122,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &71368089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 71368090}
+  - component: {fileID: 71368091}
+  m_Layer: 0
+  m_Name: InitExperience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &71368090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71368089}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &71368091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71368089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8412db76d7fc04440b0f9c9131640e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _experienceStatsData: {fileID: 11400000, guid: d32908cb9ddac6e499f81f6192166a77, type: 2}
+  _maxExperience: {fileID: 11400000, guid: 1d02a853d4f496444903834e0ce636d5, type: 2}
+  _maxExperienceIncrement: {fileID: 11400000, guid: bd074c6b26bdbcb41882af6ad31bc1f6, type: 2}
+  _maxExperienceMultiplier: {fileID: 11400000, guid: d55a3afac5e6a9e4fa3490a04e200d89, type: 2}
+  _expPickupValue: {fileID: 11400000, guid: 7c2e912cf62d2e744bd02c33947fa952, type: 2}
 --- !u!1 &166965660
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e8659f41d637c47bfcc1c1faf7fb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+  _boostCenterScene: {fileID: 102900000, guid: ab9370eb0b557394686f1ea80bb79913, type: 3}
 --- !u!4 &354515967
 Transform:
   m_ObjectHideFlags: 0
@@ -247,6 +298,53 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354515964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1345519792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345519794}
+  - component: {fileID: 1345519793}
+  m_Layer: 0
+  m_Name: Round Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1345519793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345519792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f688df01315d440acc70ed12af78ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roundData: {fileID: 11400000, guid: 82ce773b762d3c5449b0e37a112ebc41, type: 2}
+  _currentRound: {fileID: 11400000, guid: 80ab0fd2bd78993479c715daec61f8ac, type: 2}
+  _sceneTransitionDelay: 3
+--- !u!4 &1345519794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345519792}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -376,6 +474,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 354515967}
+  - {fileID: 1345519794}
   - {fileID: 166965661}
   - {fileID: 1859894425}
   - {fileID: 1759311831}
+  - {fileID: 71368090}
