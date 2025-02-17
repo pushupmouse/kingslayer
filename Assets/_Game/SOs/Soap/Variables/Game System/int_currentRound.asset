@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56cdb8ad39a5bdd4f8ed3d18fae14a63, type: 3}
-  m_Name: int_currentRoundPhase
+  m_Name: int_currentRound
   m_EditorClassIdentifier: 
   TagIndex: 0
   Description: 
@@ -20,7 +20,7 @@ MonoBehaviour:
   _debugLogEnabled: 0
   _saved: 0
   _defaultValue: 0
-  _resetOn: 2
+  _resetOn: 1
   _runtimeValue: 1
   _isClamped: 1
   _minMax: {x: 1, y: 2147483647}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Obvious.Soap;
 using UnityEngine;
@@ -50,6 +51,11 @@ public class EnemySpawner : Spawner
             _sniperPrefab,
             _rangerPrefab,
         };
+    }
+
+    private void OnDisable()
+    {
+        _currentRoundPhase.OnValueChanged -= OnRoundPhaseChange;
     }
 
     private void OnRoundPhaseChange(int obj)

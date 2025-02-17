@@ -20,7 +20,7 @@ MonoBehaviour:
   _debugLogEnabled: 0
   _saved: 0
   _defaultValue: 0
-  _resetOn: 0
+  _resetOn: 1
   _runtimeValue: 1
   _isClamped: 1
   _minMax: {x: 1, y: 3.4028235e+38}

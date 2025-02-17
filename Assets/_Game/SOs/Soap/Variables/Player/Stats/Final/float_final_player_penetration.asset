@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TagIndex: 0
   Description: 
-  _guid: 
+  _guid: 4d3e1753a02cb5f4e87eae282a9609c4
   _saveGuid: 0
   _value: 0
   _debugLogEnabled: 0
   _saved: 0
   _defaultValue: 0
-  _resetOn: 0
+  _resetOn: 1
   _runtimeValue: 0
   _isClamped: 0
   _minMax: {x: 0, y: 3.4028235e+38}

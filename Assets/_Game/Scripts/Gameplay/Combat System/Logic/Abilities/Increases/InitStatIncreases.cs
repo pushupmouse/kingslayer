@@ -1,15 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Obvious.Soap;
 using UnityEngine;
 
-public class InitStatIncreases : MonoBehaviour
+public class InitStatIncreases : Singleton<InitStatIncreases>
 {   
     [SerializeField] private StatIncreaseData[] _increases;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         foreach (StatIncreaseData increase in _increases)
         {
             increase.Init();

@@ -1,15 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Obvious.Soap;
 using UnityEngine;
 
-public class InitFinalStats : MonoBehaviour
+public class InitFinalStats : Singleton<InitFinalStats>
 {
     [SerializeField] private FinalStatData[] _stats;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         foreach (FinalStatData stat in _stats)
         {
             stat.Init();

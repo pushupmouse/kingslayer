@@ -2,8 +2,7 @@ using Obvious.Soap;
 using UnityEngine;
 using Yade.Runtime;
 
-//surely there is a better way hahah
-public class InitPlayerStats : MonoBehaviour
+public class InitPlayerStats : Singleton<InitPlayerStats>
 {
     [SerializeField] private YadeSheetData _initPlayerStatsData;
     [SerializeField] private FloatVariable _baseAttack;
@@ -33,13 +32,16 @@ public class InitPlayerStats : MonoBehaviour
         [DataField(10)] public string MaxRange;
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         InitStats();
     }
 
     private void InitStats()
     {
+        Debug.Log("i ran");
         var list = _initPlayerStatsData.AsList<PlayerStat>();
         
         _baseAttack.Value = float.Parse(list[1].Attack);

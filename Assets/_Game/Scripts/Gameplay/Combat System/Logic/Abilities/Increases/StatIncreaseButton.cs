@@ -2,16 +2,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StatIncreaseSelectorButton : MonoBehaviour
+public class StatIncreaseButton : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private TextMeshProUGUI _applyCount;
     [field:SerializeField] public Button Button { get; private set; }
     [SerializeField] private Image _buttonImage;
-    [SerializeField] private Color _commonColor = new Color(0.5f, 0.5f, 0.5f); // Default Grey for common
-    [SerializeField] private Color _rareColor = new Color(0.2f, 0.6f, 1f); // Default Blue for rare
-    [SerializeField] private Color _epicColor = new Color(0.8f, 0f, 1f); // Default Purple for epic
-    [SerializeField] private Color _legendaryColor = new Color(1f, 0.8f, 0f); // Default Yellow for legendary
+    [SerializeField] private Color _commonColor;
+    [SerializeField] private Color _rareColor;
+    [SerializeField] private Color _epicColor;
+    [SerializeField] private Color _legendaryColor;
 
     public void Init(string description, int applyCount, RarityType rarityType)
     {

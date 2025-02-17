@@ -20,9 +20,12 @@ public class Player : MonoBehaviour, IDamageable
     
     private void Awake()
     {
-        _currentHealth.Value = _finalMaxHealth.Value;
         _currentHealth.OnValueChanged += OnCurrentHealthChanged;
         _finalMaxHealth.OnValueChanged += OnFinalMaxHealthChanged;
+        
+        OnFinalMaxHealthChanged(_finalMaxHealth.Value);
+        _currentHealth.Value = _finalMaxHealth.Value;
+        
         Timing.RunCoroutine(Utility.EmulateUpdate(MyUpdate, this).CancelWith(gameObject));
     }
 
@@ -35,7 +38,7 @@ public class Player : MonoBehaviour, IDamageable
         _timer = 0;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _currentHealth.OnValueChanged -= OnCurrentHealthChanged;
         _finalMaxHealth.OnValueChanged -= OnFinalMaxHealthChanged;
@@ -86,6 +89,6 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        _onPlayerDeath.Raise();
+        //_onPlayerDeath.Raise();
     }
 }

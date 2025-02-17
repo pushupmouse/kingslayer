@@ -2,7 +2,7 @@ using Obvious.Soap;
 using UnityEngine;
 using Yade.Runtime;
 
-public class InitExperienceStats : MonoBehaviour
+public class InitExperienceStats : Singleton<InitExperienceStats>
 {
     [SerializeField] private YadeSheetData _experienceStatsData;
     [SerializeField] private FloatVariable _maxExperience;
@@ -18,8 +18,10 @@ public class InitExperienceStats : MonoBehaviour
         [DataField(3)] public string ExpPickupValue;
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         var list = _experienceStatsData.AsList<Experience>();
 
         _maxExperience.Value = float.Parse(list[1].MaxExperience);

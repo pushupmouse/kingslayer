@@ -12,7 +12,7 @@ public class VFXSpawner : MonoBehaviour
         _scriptableListEnemy.OnItemRemoved += OnEnemyDied;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _scriptableListEnemy.OnItemAdded -= OnEnemySpawned;
         _scriptableListEnemy.OnItemRemoved -= OnEnemyDied;

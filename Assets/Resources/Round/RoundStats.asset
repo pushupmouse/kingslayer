@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c46ed672292249fa8d244dd2e7a8541, type: 3}
-  m_Name: RoundPhaseStats
+  m_Name: RoundStats
   m_EditorClassIdentifier: 
   data:
     items:
@@ -37,7 +37,7 @@ MonoBehaviour:
             UnityObject: {fileID: 0}
             UOs: []
           - rawValue: 
-            value: 20
+            value: 1
             UnityObject: {fileID: 0}
             UOs: []
       - height: 25
